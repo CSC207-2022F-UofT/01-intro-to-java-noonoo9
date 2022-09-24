@@ -45,6 +45,23 @@ public class Basics {
          */
         System.out.println("Hello World!");
 
+        //        Testing split method:
+//        System.out.println(Basics.split("Idol Long Oolong Vertical Europe University Toyota"));
+        //        Should print: "ILOVEUT"
+
+        //        Testing odd sum method:
+
+//        int[] arr_one_item = {2};
+//        System.out.print("When there's one item in an array, method returns: ");
+//        System.out.println(Basics.oddSum(arr_one_item));
+//        //        Should print: 0
+//
+//        int[] arr_many_items = {1, 2, 3, 4, 5, 6};
+//        System.out.print("When there's more than one or zero items in array, method returns: ");
+//        System.out.println(Basics.oddSum(arr_many_items));
+        //        Should print: 12
+
+
 
 
         /* 4. In Python, we could declare variables using a simple assignment
@@ -149,15 +166,14 @@ public class Basics {
         StringBuilder ret = new StringBuilder();
 
         // Fill in the rest of the body here
-        String first_letters = "";
-        String[] removed_spaces = to_split.split(" ");
-        String result = "";
-        for (int i=0; i <= 7; i++) {
-            String word = removed_spaces[i];
-            result += word.charAt(0);
+
+        String[] arr = to_split.split(" ");
+
+        for (int i = 0; i < arr.length; i++) {
+            ret.append(arr[i].charAt(0));
         }
-        return result;
-//        return ret.toString();
+
+        return ret.toString();
     }
 
 
@@ -188,10 +204,10 @@ public class Basics {
             return 0;
         } else if (arr.length == 1) {
             return 0;
-        }
-
-        for (int i = 1; i <= arr.length; i += 2){
-            current_sum += arr[i];
+        } else {
+            for (int i = 1; i < arr.length; i += 2) {
+                current_sum += arr[i];
+            }
         }
 
         return current_sum;
